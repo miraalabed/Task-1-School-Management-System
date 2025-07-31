@@ -1,0 +1,459 @@
+[2025-07-28 18:31:54] local.ERROR: The command "run:school-system" does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): The command \"run:school-system\" does not exist. at C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php:162)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(426): Illuminate\\Console\\Application->call('run:school-syst...', Array, NULL)
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(361): Illuminate\\Foundation\\Console\\Kernel->call('run:school-syst...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\routes\\console.php(11): Illuminate\\Support\\Facades\\Facade::__callStatic('call', Array)
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Console\\ClosureCommand->{closure}()
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(84): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\ClosureCommand.php(69): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Foundation\\Console\\ClosureCommand->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\ClosureCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#17 {main}
+"} 
+[2025-07-29 21:09:38] local.ERROR: Method App\Console\Commands\RunSchoolSystem::editStudent does not exist. {"exception":"[object] (BadMethodCallException(code: 0): Method App\\Console\\Commands\\RunSchoolSystem::editStudent does not exist. at C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Macroable\\Traits\\Macroable.php:115)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(79): Illuminate\\Console\\Command->__call('editStudent', Array)
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(56): App\\Console\\Commands\\RunSchoolSystem->runAsAdmin('add')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#16 {main}
+"} 
+[2025-07-29 21:26:06] local.ERROR: Method App\Console\Commands\RunSchoolSystem::deleteStudent does not exist. {"exception":"[object] (BadMethodCallException(code: 0): Method App\\Console\\Commands\\RunSchoolSystem::deleteStudent does not exist. at C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Macroable\\Traits\\Macroable.php:115)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(80): Illuminate\\Console\\Command->__call('deleteStudent', Array)
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(56): App\\Console\\Commands\\RunSchoolSystem->runAsAdmin('admin')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#16 {main}
+"} 
+[2025-07-29 21:30:25] local.ERROR: syntax error, unexpected token "(" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"(\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:177)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-29 21:30:29] local.ERROR: syntax error, unexpected token "(" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"(\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:177)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-29 21:32:47] local.ERROR: syntax error, unexpected token "(" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"(\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:177)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-29 22:44:57] local.ERROR: Call to undefined method App\Models\SchoolClass::getSupervisor() {"exception":"[object] (Error(code: 0): Call to undefined method App\\Models\\SchoolClass::getSupervisor() at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:448)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(388): App\\Console\\Commands\\RunSchoolSystem->viewClassroomInfo(Object(App\\Models\\Student))
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(61): App\\Console\\Commands\\RunSchoolSystem->runAsStudent('ali@gmail.com')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#16 {main}
+"} 
+[2025-07-30 14:06:30] local.ERROR: Method App\Console\Commands\RunSchoolSystem::logAction does not exist. {"exception":"[object] (BadMethodCallException(code: 0): Method App\\Console\\Commands\\RunSchoolSystem::logAction does not exist. at C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Macroable\\Traits\\Macroable.php:115)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(69): Illuminate\\Console\\Command->__call('logAction', Array)
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#15 {main}
+"} 
+[2025-07-30 14:30:47] local.ERROR: Method App\Console\Commands\RunSchoolSystem::logAction does not exist. {"exception":"[object] (BadMethodCallException(code: 0): Method App\\Console\\Commands\\RunSchoolSystem::logAction does not exist. at C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Macroable\\Traits\\Macroable.php:115)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(69): Illuminate\\Console\\Command->__call('logAction', Array)
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#15 {main}
+"} 
+[2025-07-30 19:47:23] local.ERROR: syntax error, unexpected token ",", expecting "}" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \",\", expecting \"}\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:436)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-30 20:02:27] local.ERROR: syntax error, unexpected variable "$this", expecting "}" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected variable \"$this\", expecting \"}\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:107)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-30 20:03:24] local.ERROR: syntax error, unexpected token ";", expecting "}" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \";\", expecting \"}\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:106)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-30 20:03:50] local.ERROR: syntax error, unexpected variable "$this", expecting "}" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected variable \"$this\", expecting \"}\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:107)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-30 20:07:00] local.ERROR: syntax error, unexpected token "=>", expecting "}" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"=>\", expecting \"}\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:106)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-30 20:07:16] local.ERROR: syntax error, unexpected token ",", expecting "function" or "const" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \",\", expecting \"function\" or \"const\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:532)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-30 20:54:03] local.ERROR: Unhandled match case 'View Subjects a...' {"exception":"[object] (UnhandledMatchError(code: 0): Unhandled match case 'View Subjects a...' at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:430)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(74): App\\Console\\Commands\\RunSchoolSystem->runAsStudent('ali@gmail.com')
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#15 {main}
+"} 
+[2025-07-30 21:58:35] local.ERROR: Class "App\Console\Commands\AdminService" not found {"exception":"[object] (Error(code: 0): Class \"App\\Console\\Commands\\AdminService\" not found at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:62)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#14 {main}
+"} 
+[2025-07-30 22:00:05] local.ERROR: Class "App\Console\Commands\AdminService" not found {"exception":"[object] (Error(code: 0): Class \"App\\Console\\Commands\\AdminService\" not found at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:62)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#14 {main}
+"} 
+[2025-07-30 22:02:24] local.ERROR: syntax error, unexpected token "(" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"(\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Services\\AdminService.php:115)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(64): Composer\\Autoload\\ClassLoader->loadClass('App\\\\Services\\\\Ad...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#16 {main}
+"} 
+[2025-07-30 22:08:09] local.ERROR: Undefined variable $adminService {"exception":"[object] (ErrorException(code: 0): Undefined variable $adminService at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:102)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', 'C:\\\\Users\\\\lenovo...', 102)
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(102): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', 'C:\\\\Users\\\\lenovo...', 102)
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(77): App\\Console\\Commands\\RunSchoolSystem->runAsAdmin('?????')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#17 {main}
+"} 
+[2025-07-30 22:10:17] local.ERROR: New expressions are not supported in this context {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): New expressions are not supported in this context at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:12)
+[stacktrace]
+#0 {main}
+"} 
+[2025-07-30 22:11:00] local.ERROR: New expressions are not supported in this context {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): New expressions are not supported in this context at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:12)
+[stacktrace]
+#0 {main}
+"} 
+[2025-07-30 22:11:26] local.ERROR: New expressions are not supported in this context {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): New expressions are not supported in this context at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:12)
+[stacktrace]
+#0 {main}
+"} 
+[2025-07-30 22:19:12] local.ERROR: Undefined variable $studentService {"exception":"[object] (ErrorException(code: 0): Undefined variable $studentService at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:140)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', 'C:\\\\Users\\\\lenovo...', 140)
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(140): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', 'C:\\\\Users\\\\lenovo...', 140)
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(82): App\\Console\\Commands\\RunSchoolSystem->runAsStudent('ali@gmail.com')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(113): App\\Console\\Commands\\RunSchoolSystem->handle()
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(80): App\\Console\\Commands\\RunSchoolSystem->runAsAdmin('????')
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#19 {main}
+"} 
+[2025-07-30 22:23:14] local.ERROR: Call to undefined method App\Services\StudentService::showStudentProfile() {"exception":"[object] (Error(code: 0): Call to undefined method App\\Services\\StudentService::showStudentProfile() at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:143)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(83): App\\Console\\Commands\\RunSchoolSystem->runAsStudent('ali@gmail.com')
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(116): App\\Console\\Commands\\RunSchoolSystem->handle()
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(81): App\\Console\\Commands\\RunSchoolSystem->runAsAdmin('admin')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#17 {main}
+"} 
+[2025-07-30 22:25:45] local.ERROR: Too few arguments to function App\Services\StudentService::updateContact(), 1 passed in C:\Users\lenovo\Desktop\school-system\app\Console\Commands\RunSchoolSystem.php on line 144 and exactly 2 expected {"exception":"[object] (ArgumentCountError(code: 0): Too few arguments to function App\\Services\\StudentService::updateContact(), 1 passed in C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php on line 144 and exactly 2 expected at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Services\\StudentService.php:30)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(144): App\\Services\\StudentService->updateContact(Object(App\\Models\\Student))
+#1 C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php(83): App\\Console\\Commands\\RunSchoolSystem->runAsStudent('ali@gmail.com')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Console\\Commands\\RunSchoolSystem->handle()
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(780): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#8 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Command\\Command.php(318): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(1092): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(341): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\RunSchoolSystem), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\symfony\\console\\Application.php(192): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#16 {main}
+"} 
+[2025-07-30 23:38:27] local.ERROR: syntax error, unexpected token ";" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \";\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:133)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-30 23:47:40] local.ERROR: syntax error, unexpected token "}" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"}\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:191)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-30 23:47:57] local.ERROR: syntax error, unexpected token "}" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"}\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:191)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-30 23:48:19] local.ERROR: syntax error, unexpected token "}" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"}\" at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:191)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
+[2025-07-30 23:48:33] local.ERROR: Unclosed '{' on line 11 {"exception":"[object] (ParseError(code: 0): Unclosed '{' on line 11 at C:\\Users\\lenovo\\Desktop\\school-system\\app\\Console\\Commands\\RunSchoolSystem.php:193)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\lenovo...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(372): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#3 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(497): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#4 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(482): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#5 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#6 C:\\Users\\lenovo\\Desktop\\school-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1234): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\lenovo\\Desktop\\school-system\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#8 {main}
+"} 
