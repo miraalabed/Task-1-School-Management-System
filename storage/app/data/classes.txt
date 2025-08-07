@@ -1,0 +1,12 @@
+Grade 1,Ms. Aisha,Math-English-Arabic-Science-Art
+Grade 2,Mr. Kareem,Math-English-Arabic-Science-Social Studies
+Grade 3,Ms. Rana,Math-English-Arabic-Science-History
+Grade 4,Mr. Samir,Math-English-Arabic-Science-History-Geography
+Grade 5,Ms. Laila,Math-English-Arabic-Science-History-Geography
+Grade 6,Mr. Omar,Math-English-Arabic-Science-History-Geography
+Grade 7,Ms. Sara,Math-English-Arabic-Science-History-Geography
+Grade 8,Mr. Ahmed,English-Arabic-Science-History-Geography
+Grade 9,Ms. Nour,Math-English-Physics-Chemistry-Biology-History-Geography
+Grade 10,Mr. Tarek,Math-Science-English-History-Geography
+Grade 11,Ms. Diana,Physics-Chemistry-English-Math-History-Biology
+Grade 12,Dr. Nabil,History-Economics-Philosophy-English-Math
