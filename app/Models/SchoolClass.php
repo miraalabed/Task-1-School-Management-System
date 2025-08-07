@@ -1,51 +1,74 @@
 <?php
-
 namespace App\Models;
 
-// This class represents a school class (like Grade 1, Grade 2, etc.)
 class SchoolClass
 {
-    public $name;         // Name of the class (e.g. Grade 5)
-    public $subjects;     // Subjects assigned to this class
-    public $supervisor;   // Name of the supervisor for this class
+    private string $name;        // The name of the class (e.g., Grade 9A)
+    private array $subjects;     // List of subjects assigned to the class
+    private ?string $supervisor; // Name of the class supervisor (can be null)
 
-    // When creating a class, we can give it a name, subjects, and supervisor
-    public function __construct($name, $subjects = [], $supervisor = null)
+    // Constructor: creates a new SchoolClass object and sets its name, subjects, and supervisor
+    public function __construct(string $name, array $subjects = [], ?string $supervisor = null)
     {
-        $this->name = $name;
-        $this->subjects = $subjects;
-        $this->supervisor = $supervisor;
+        $this->setName($name);
+        $this->setSubjects($subjects);
+        $this->setSupervisor($supervisor);
     }
 
-    // Add a new subject to the class if it's not already included
-    public function addSubject($subject)
+    // --------------------------------------------------- Setters functions------------------------------------------------------------
+
+    // Sets the class name after checking it's not empty
+    public function setName(string $name): void
     {
-        if (!in_array($subject, $this->subjects)) {
-            $this->subjects[] = $subject;
+        if (empty(trim($name))) {
+            throw new \InvalidArgumentException("Class name must not be empty.");
         }
+        $this->name = $name;
     }
 
-    // Remove a subject from the class if it exists
-    public function removeSubject($subject)
+    // Sets the list of subjects for the class
+    public function setSubjects(array $subjects): void
     {
-        $this->subjects = array_filter($this->subjects, fn($s) => $s !== $subject);
+        $this->subjects = $subjects;
     }
-
-    // Return the list of subjects for this class
-    public function getSubjects()
-    {
-        return $this->subjects;
-    }
-
-    // Return the name of the supervisor, or 'Unassigned' if not set
-    public function getSupervisor()
-    {
-        return $this->supervisor ?? 'Unassigned';
-    }
-
-    // Set or change the supervisor's name
-    public function setSupervisor($name)
+   
+    // Sets the name of the class supervisor (can be null if unassigned)
+    public function setSupervisor(?string $name): void
     {
         $this->supervisor = $name;
+    }
+
+    // --------------------------------------------------- Getters functions------------------------------------------------------------
+
+    public function getName(): string { return $this->name; }
+    public function getSubjects(): array { return $this->subjects; }
+    public function getSupervisor(): string{ return $this->supervisor ?? 'Unassigned'; }
+
+     // --------------------------------------------------- Subjects operations------------------------------------------------------------
+
+    // Adds a new subject to the class after checking it's not already added
+    public function addSubject(string $subject): void
+    {
+        $subjectLower = strtolower(trim($subject));
+        foreach ($this->subjects as $s) {
+            if (strtolower($s) === $subjectLower) {
+                throw new \InvalidArgumentException("Subject '$subject' already exists.");
+            }
+        }
+        $this->subjects[] = $subject;
+    }
+
+    // Removes a subject from the class if it exists
+    public function removeSubject(string $subject): void
+    {
+        $subjectLower = strtolower(trim($subject));
+        foreach ($this->subjects as $key => $s) {
+            if (strtolower($s) === $subjectLower) {
+                unset($this->subjects[$key]); // Remove the subject
+                $this->subjects = array_values($this->subjects); // Reindex the array
+                return;
+            }
+        }
+        throw new \InvalidArgumentException("Subject '$subject' does not exist.");
     }
 }

@@ -1,146 +1,244 @@
 <?php
+    namespace App\Services;
+    use App\Models\Student;
+    use Illuminate\Console\Command;
 
-namespace App\Services;
-
-use App\Models\Student;
-use App\Models\SchoolClass;
-use Illuminate\Console\Command;
-
-class StudentService
-{
-    // This class handles student-related operations from the student dashboard
-
-    protected Command $command;
-    protected array $classes;
-
-    // Constructor receives the console command instance and list of classes
-    public function __construct(Command $command, array $classes)
+    class StudentService
     {
-        $this->command = $command;
-        $this->classes = $classes;
-    }
+        // This class helps a student to view and update their profile, grades, and classroom
 
-    // Display basic profile info of a student
-    public function showProfile(Student $student)
-    {
-        $this->command->info("Profile Info");
-        $this->command->line("Name: {$student->name}");
-        $this->command->line("Email: {$student->email}");
-        $this->command->line("Phone: " . ($student->phone ?? 'N/A'));
-        $this->command->line("Class: {$student->class}");
-        $this->command->line("Status: " . ($student->active ? 'Active' : 'Inactive'));
-$this->logAction("Student viewed their profile: {$student->email}");
+        protected Command $command;
+        protected string $studentsFile;
+        protected string $gradesFile;
+        protected string $classesFile;
 
-    }
+        // Constructor is called when the object is created
+        public function __construct(Command $command)
+        {
+            $this->command = $command;
+            // These are the file paths where student, grade, and class data is saved
+            $this->studentsFile = storage_path('app\data\students.txt');
+            $this->gradesFile = storage_path('app\data\grades.txt');
+            $this->classesFile = storage_path('app\data\classes.txt');
+        }
 
-    // Allow the student to update their email and phone number
-    public function updateContact(Student $student, array $students)
-    {
-        $oldEmail = $student->email;
-        $oldPhone = $student->phone;
-
-        // Validate the email input
-        while (true) {
-            $newEmail = $this->command->ask("Enter new email", $student->email);
-
-            if (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
-                $this->command->error("Invalid email format.");
-                continue;
+        // Save all students' info into the students file
+        private function saveStudentsToFile(array $students)
+        {
+            $lines = [];
+            foreach ($students as $student) {
+                // Save all student details in a line
+                $lines[] = implode(',', [
+                    $student->getName(),
+                    $student->getIdNumber(),
+                    'student',
+                    $student->getPhone(),
+                    $student->getAge(),
+                    $student->getClass()->getName(),
+                    $student->getEmail(),
+                    $student->getPassword(),
+                    $student->getStatus(),
+                ]);
             }
+            file_put_contents($this->studentsFile, implode("\n", $lines));
+        }
 
-            if ($newEmail === 'admin@gmail.com') {
-                $this->command->error("This email is reserved and cannot be used.");
-                continue;
+        // Save all grades of students into the grades file
+        private function saveGradesToFile(array $students)
+        {
+            $lines = [];
+            foreach ($students as $student) {
+                foreach ($student->getGrades() as $subject => $grade) {
+                    $lines[] = implode(',', [
+                        $student->getEmail(),
+                        $subject,
+                        $grade
+                    ]);
+                }
             }
+            file_put_contents($this->gradesFile, implode("\n", $lines));
+        }
 
-            // Check if the new email already exists for another student
-            $exists = collect($students)->first(fn($s) => $s->email === $newEmail && $s !== $student);
-            if ($exists) {
-                $this->command->error("This email is already used by another student.");
-                continue;
+        // Show the profile information of the student
+        public function showProfile(Student $student)
+        {
+            $this->command->info("Profile Info");
+            $this->command->line("Name: {$student->getName()}");
+            $this->command->line("ID Number: {$student->getIdNumber()}");
+            $this->command->line("Phone: {$student->getPhone()}");
+            $this->command->line("Age: {$student->getAge()}");
+            $this->command->line("Class: {$student->getClass()->getName()}");
+            $this->command->line("Email: {$student->getEmail()}");
+            $this->logAction("Student viewed their profile: {$student->getEmail()}");   // Save this action in the log file
+        }
+
+        // Update the student's contact information (Email, Phone, or Password)
+        public function updateContact(Student $student, array $students)
+        {
+            $choice = $this->command->choice(
+                "What would you like to update?",
+                ['Email', 'Phone', 'Password']
+            );
+
+            switch ($choice) {
+                case 'Email':
+                    $oldEmail = $student->getEmail(); // Save old email
+                    $this->command->line("Current email is: {$oldEmail}");
+
+                    while (true) {
+                        $newEmail = trim($this->command->ask("Enter your new email"));
+
+                        // Check if it's empty
+                        if (empty($newEmail)) {
+                            $this->command->error("Email cannot be empty.");
+                            continue;
+                        }
+
+                        // Check if email is valid format
+                        if (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
+                            $this->command->error("Invalid email format.");
+                            continue;
+                        }
+
+                        // Make sure no other student has this email
+                        $emailExists = collect($students)->contains(function ($s) use ($newEmail, $student) {
+                            return $s->getEmail() === $newEmail && $s !== $student;
+                        });
+
+                        if ($emailExists) {
+                            $this->command->error("Email already exists. Please use a different one.");
+                            continue;
+                        }
+                        try {
+                            // Update the email
+                            $student->setEmail($newEmail);
+
+                            // If old grades exist, move them to the new email
+                            if (isset($this->grades[$oldEmail])) {
+                                $this->grades[$newEmail] = $this->grades[$oldEmail];
+                                unset($this->grades[$oldEmail]);
+                                $this->saveGradesToFile($students); // Save new grades file
+                            }
+                            $this->command->info("Email updated successfully!");
+                            $this->logAction("Student updated email for {$student->getName()}");
+                            $this->saveStudentsToFile($students);
+                            break;
+                        } catch (\InvalidArgumentException $e) {
+                            $this->command->error($e->getMessage());
+                        }
+                    }
+                    break;
+
+                case 'Phone':
+                    $this->command->line("Current phone is: {$student->getPhone()}");
+                    while (true) {
+                        $newPhone = $this->command->ask("Enter your new phone number");
+                        if (empty(trim($newPhone))) {
+                            $this->command->error("Phone number cannot be empty.");
+                            continue;
+                        }
+                        try {
+                            $student->setPhone($newPhone);
+                            $this->command->info("Phone updated successfully!");
+                            $this->logAction("Student updated phone for {$student->getName()}");
+                            $this->saveStudentsToFile($students);
+                            break;
+                        } catch (\InvalidArgumentException $e) {
+                            $this->command->error($e->getMessage());
+                        }
+                    }
+                    break;
+
+                case 'Password':
+                    // Ask for current password
+                    while (true) {
+                        $oldPassword = $this->command->secret("Enter your current password");
+                        if ($oldPassword !== $student->getPassword()) {
+                            $this->command->error("Current password is incorrect.");
+                            continue;
+                        }
+                        break;
+                    }
+
+                    // Set new password
+                    while (true) {
+                        $newPassword = $this->command->secret("Enter new password");
+                        try {
+                            $student->setPassword($newPassword);
+                        } catch (\InvalidArgumentException $e) {
+                            $this->command->error($e->getMessage());
+                            continue;
+                        }
+                        $confirmPassword = $this->command->secret("Confirm new password");
+                        if ($newPassword !== $confirmPassword) {
+                            $this->command->error("Passwords do not match.");
+                            continue;
+                        }
+                        $this->command->info("Password updated successfully!");
+                        $this->logAction("Student updated password for {$student->getName()}");
+                        $this->saveStudentsToFile($students);
+                        break;
+                    }
+                    break;
             }
-
-            break;
         }
 
-        // Validate the phone number (must be 10 digits)
-        while (true) {
-            $newPhone = $this->command->ask("Enter new phone number", $student->phone ?? '');
-            if (!preg_match('/^\d{10}$/', $newPhone)) {
-                $this->command->error("Phone number must be exactly 10 digits.");
-                continue;
+        // Show all subjects and grades of the student
+        public function showSubjectsAndGrades(Student $student)
+        {
+            $classObj = $student->getClass();
+            // If student doesn't have a class
+            if (!$classObj) {
+                $this->command->line("Student is not assigned to a valid class.");
+                return;
             }
-            break;
+            $subjects = $classObj->getSubjects();
+
+            // If no subjects found
+            if (empty($subjects)) {
+                $this->command->line("No subjects assigned to this class.");
+                return;
+            }
+            $this->command->info("Subjects and Grades:");
+            $grades = $student->getGrades();
+
+            // Show each subject and its grade (or say "No grade")
+            foreach ($subjects as $subject) {
+                $grade = $grades[$subject] ?? '(No grade)';
+                $this->command->line("- $subject: $grade");
+            }
+            $this->logAction("Student viewed subjects and grades for class: {$classObj->getName()}");
         }
 
-        // Apply updates
-        $student->updateContact($newEmail, $newPhone);
-        $this->command->info("Info updated!");
+        // Show information about the classroom
+        public function showClassroom(Student $student)
+        {
+            $classObj = $student->getClass();
+            if (!$classObj) {
+                $this->command->line("Student is not assigned to a valid class.");
+                return;
+            }
+            $this->command->info("Assigned Classroom Info");
+            $this->command->line("Class: {$classObj->getName()}");
+            $this->command->line("Class Supervisor: {$classObj->getSupervisor()}");
+            $subjects = $classObj->getSubjects();
 
-        // Log the update
-        $this->logAction("Student updated contact info: OLD email=$oldEmail, phone=$oldPhone → NEW email=$newEmail, phone=$newPhone");
-    }
-
-    // Show subjects of the student and any available grades
-    public function showSubjectsAndGrades(Student $student)
-    {
-        $className = $student->class;
-        $classObj = $this->classes[$className] ?? null;
-
-        if (!$classObj) {
-            $this->command->line("Subjects: Not found (unknown class)");
-            return;
-        }
-
-        $subjects = $classObj->getSubjects();
-
-        if (empty($subjects)) {
-            $this->command->line("No subjects assigned to this class.");
-            return;
-        }
-
-        $this->command->info("Subjects and Grades:");
-
-        foreach ($subjects as $subject) {
-            $grade = $student->grades[$subject] ?? null;
-            $this->command->line("- $subject: " . ($grade ?? '(No grade)'));
-        }
-
-        $this->logAction("Student viewed subjects and grades for class: $className");
-    }
-
-    // Show full classroom info including supervisor and subjects
-    public function showClassroom(Student $student)
-    {
-        $className = $student->class;
-        $classObj = $this->classes[$className] ?? null;
-
-        $this->command->info("Assigned Classroom Info");
-        $this->command->line("Class: $className");
-
-        if ($classObj) {
-            $this->command->line("Class Supervisor: " . $classObj->getSupervisor());
-
-            if (!empty($classObj->subjects)) {
+            if (!empty($subjects)) {
                 $this->command->line("Subjects:");
-                foreach ($classObj->subjects as $subject) {
+                foreach ($subjects as $subject) {
                     $this->command->line("- $subject");
                 }
             } else {
                 $this->command->line("No subjects assigned.");
             }
-        } else {
-            $this->command->line("Class not found.");
+            $this->logAction("Student viewed classroom info for class: {$classObj->getName()}");
+          }
+
+        // Save the action to a log file with date and time
+        private function logAction(string $message)
+        {
+            $timestamp = now()->toDateTimeString();
+            $logLine = "[$timestamp] $message\n";
+            file_put_contents(storage_path('logs/audit_log.txt'), $logLine, FILE_APPEND);
         }
-$this->logAction("Student viewed classroom info for class: {$className}");
-
     }
-
-    // Log student actions for auditing
-    private function logAction(string $message)
-    {
-        $timestamp = now()->toDateTimeString();
-        $logLine = "[$timestamp] $message\n";
-        file_put_contents(storage_path('logs/audit_log.txt'), $logLine, FILE_APPEND);
-    }
-}
