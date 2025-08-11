@@ -612,31 +612,32 @@
             $this->logAction("Admin viewed list of all students.");   // Log this action for tracking
         }
 
-        // View class info like supervisor and subjects
         public function viewClassesInfo()
-        {
-            while (true) 
-                $classList = array_keys($this->classes);   // Get all class names as a list
-                $classList[] = 'Exit';  // Add an option to exit the loop
-                // Ask the user to select a class or exit
-                $choice = $this->command->choice("Select a class to view details", $classList);
-                if ($choice === 'Exit') return;  // If user chooses 'Exit', stop the function
-                $class = $this->classes[$choice];   // Get the selected class object
+             {
+                while (true) {
+                    $classList = array_keys($this->classes);   // Get all class names as a list
+                    $classList[] = 'Exit';  // Add an option to exit the loop
+                    // Ask the user to select a class or exit
+                    $choice = $this->command->choice("Select a class to view details", $classList);
+                    if ($choice === 'Exit') return;  // Exit loop/function if Exit selected
+                    $class = $this->classes[$choice];   // Get selected class object
 
-                // Show the class ifo
-                $this->command->info("Class: {$class->getName()}");
-                $this->command->line("Supervisor: " . ($class->getSupervisor() ?? 'Unassigned'));   //say 'Unassigned' if none
-                $subjects = $class->getSubjects();
-                if (!empty($subjects)) {
-                    $this->command->line("Subjects:");
-                    foreach ($subjects as $subject) {
-                        $this->command->line("- $subject");
+                    // Show the class info
+                    $this->command->info("Class: {$class->getName()}");
+                    $this->command->line("Supervisor: " . ($class->getSupervisor() ?? 'Unassigned'));
+                    $subjects = $class->getSubjects();
+                    if (!empty($subjects)) {
+                        $this->command->line("Subjects:");
+                        foreach ($subjects as $subject) {
+                            $this->command->line("- $subject");
+                        }
+                    } else {
+                        $this->command->line("No subjects assigned.");
                     }
-                } else {
-                    $this->command->line("No subjects assigned.");
+                    $this->logAction("Admin viewed class info for {$class->getName()}");
                 }
-                $this->logAction("Admin viewed class info for {$class->getName()}");  // Log that admin viewed this class info
-            }
+        }
+
         
         // Validate if email is not empty and has correct format
         private function validateEmailInput(string $email): bool

@@ -1,1 +1,21 @@
 [2025-08-07 15:47:40] User exited the system.
+[2025-08-11 15:55:39] Admin logged in using email: admin@gmail.com
+[2025-08-11 15:55:49] Admin viewed list of all students.
+[2025-08-11 15:56:14] Admin viewed list of active students.
+[2025-08-11 15:56:56] Admin changed status for omar@gmail.com to active
+[2025-08-11 15:57:06] Admin viewed list of active students.
+[2025-08-11 16:03:29] Admin logged in using email: admin@gmail.com
+[2025-08-11 16:09:04] Admin logged in using email: admin@gmail.com
+[2025-08-11 16:09:17] Admin viewed class info for Grade 2
+[2025-08-11 16:09:40] Admin removed subject 'Art' from Grade 1.
+[2025-08-11 16:09:58] Admin viewed class info for Grade 1
+[2025-08-11 16:10:23] User exited the system.
+[2025-08-11 16:11:15] Student logged in using email: mira@gmail.com
+[2025-08-11 16:11:19] Student viewed their profile: mira@gmail.com
+[2025-08-11 16:12:09] Student updated phone for mira
+[2025-08-11 16:13:01] Student viewed subjects and grades for class: Grade 10
+[2025-08-11 16:13:21] Student viewed classroom info for class: Grade 10
+[2025-08-11 16:16:46] User exited the system.
+[2025-08-11 16:17:07] Student logged in using email: mira@gmail.com
+[2025-08-11 16:17:11] Student viewed subjects and grades for class: Grade 10
+[2025-08-11 16:17:57] User exited the system.

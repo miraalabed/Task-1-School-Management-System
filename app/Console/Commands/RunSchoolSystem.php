@@ -235,6 +235,8 @@
                     'View Assigned Classroom' => $this->studentService->showClassroom($student),
                     'Exit' => $this->showExitMessage(),
                 };
+                  $this->clearConsole(); // Clear console after each action
+
             }
         }
 

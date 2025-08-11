@@ -1,4 +1,4 @@
 Ali Ahmad,123456789,student,0591234567,15,Grade 11,ali@gmail.com,Pass1234,active
 Sara Hassan,987654321,student,0578963258,14,Grade 10,sara1@gmail.com,Pass123,deactive
-Omar Khalid,456789123,student,0595555555,16,Grade 12,omar@gmail.com,Pass1234,deactive
-mira,159784623,student,0526341879,15,Grade 10,mira@gmail.com,Pass1234,active
+Omar Khalid,456789123,student,0595555555,16,Grade 12,omar@gmail.com,Pass1234,active
+mira,159784623,student,0528974169,15,Grade 10,mira@gmail.com,Pass1234,active
