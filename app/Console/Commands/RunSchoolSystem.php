@@ -26,7 +26,6 @@
             $this->loadUsersFromFile(storage_path('app\data\students.txt')); 
             $this->loadGradesFromFile(storage_path('app\data\grades.txt'));
         }
-
         // This function loads students data from a file and creates Student objects
         private function loadUsersFromFile($filePath)
         {
@@ -37,14 +36,24 @@
             $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
             foreach ($lines as $line) {
                 // Split the line by commas to get student info
-                [$name, $id, $role, $phone, $age, $className, $email, $password, $status] = explode(',', $line);
+                [$name, $idNumber, $role, $phone, $age, $className, $email, $password, $status] = explode(',', $line);
 
                 // Only create student objects for those with role "student"
                 if (strtolower($role) === 'student') {
                     $schoolClassObj = $this->classes[$className] ?? null;
                     if ($schoolClassObj) {
                         // Create a new Student object and add to students list
-                        $student = new Student($name, $id, $phone, (int)$age, $schoolClassObj, $email, $password, $status);
+                        $student = new Student(
+                            $name,
+                            $idNumber,
+                            $phone,
+                            (int)$age,
+                            $email,
+                            $password,
+                            $schoolClassObj,
+                            $status
+                        );
+
                         $this->students[] = $student;
                     } else {
                         $this->error("Class '$className' not found for student $name");
@@ -199,8 +208,8 @@
                     'Edit Student' => $this->adminService->editStudent(),
                     'Delete Student' => $this->adminService->deleteStudent(),
                     'Activate/Deactivate Student Account' => $this->adminService->toggleStudentStatus(),
-                    'View All Students' => $this->adminService->listAllStudents(),
-                    'View Active Students' => $this->adminService->listActiveStudents(),
+                    'View All Students' => $this->adminService->listStudents("all"),
+                    'View Active Students' => $this->adminService->listStudents("active"),
                     'Manage Subjects and Grades' => $this->adminService->manageSubjectsAndGrades(),
                     'View Classes Info' => $this->adminService->viewClassesInfo(),
                     'Exit' => $this->showExitMessage(),
@@ -229,10 +238,10 @@
                 ]);
                 // Call StudentService functions based on choice
                 match ($choice) {
-                    'View Profile' => $this->studentService->showProfile($student),
+                    'View Profile' => $student->showProfile($this),
                     'Update Contact Info' => $this->studentService->updateContact($student, $this->students),
                     'View Subjects and grades' => $this->studentService->showSubjectsAndGrades($student),
-                    'View Assigned Classroom' => $this->studentService->showClassroom($student),
+                    'View Assigned Classroom' => $student->getClass()->showInfo(),
                     'Exit' => $this->showExitMessage(),
                 };
                   $this->clearConsole(); // Clear console after each action

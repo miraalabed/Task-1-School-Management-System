@@ -1,7 +1,7 @@
 ali@gmail.com,Math,85
-ali@gmail.com,Science,90
+ali@gmail.com,Physics,90
 sara1@gmail.com,Science,88
 sara1@gmail.com,History,75
-omar@gmail.com,Economics,91
+omar@gmail.com,Geography,91
 mira@gmail.com,Math,80
 mira@gmail.com,Science,70

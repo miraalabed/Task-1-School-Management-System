@@ -28,27 +28,7 @@
             $this->gradesFilePath = storage_path('app\data\grades.txt');
         }
 
-        // Save student data to file
-        private function saveStudentsToFile()
-        {
-            $lines = [];
-            foreach ($this->students as $student) {
-                // Convert student object to CSV line
-                $line = implode(',', [
-                    $student->getName(),
-                    $student->getIdNumber(),
-                    'student',
-                    $student->getPhone(),
-                    $student->getAge(),
-                    $student->getClass()->getName(),
-                    $student->getEmail(),
-                    $student->getPassword(),
-                    $student->getStatus(),
-                ]);
-                $lines[] = $line;
-            }
-            file_put_contents($this->usersFilePath, implode("\n", $lines));
-        }
+       
 
         // Save class data to file
         private function saveClassesToFile(): void
@@ -171,39 +151,41 @@
             $status = 'active';
 
             // Create new student object
-            $newStudent = new Student($name, $idNumber, $phone, $age, $classObj, $email, $password, $status);
+            $newStudent =  new Student($name, $idNumber, $phone, $age, $email, $password, $classObj, $status);
             $this->students[] = $newStudent;
             $this->saveStudentsToFile();
             $this->command->info("Student created successfully!");
             $this->logAction("Admin created new student: name=$name, email=$email, class=$className");
         }
 
-        // Show student info by email
+       // This method asks for a student's email and shows their profile
         public function viewStudentByEmail()
         {
+            // Keep asking until a valid email is entered
             while (true) {
                 $email = trim($this->command->ask("Enter student's email to view"));
                 if ($this->validateEmailInput($email)) {
-                    break;
+                    break; // Exit loop if email is valid
                 }
             }
-            // Search for student
+            
+            // Find the student object by email
             $student = collect($this->students)->first(fn ($s) => $s->getEmail() === $email);
+            
+            // If student not found, show error and exit
             if (!$student) {
                 $this->command->error("Student not found.");
                 return;
             }
-            // Display student details
+
+            // Show the student profile using the showProfile method
             $this->command->info("Student Profile");
-            $this->command->line("Name: " . $student->getName());
-            $this->command->line("Email: " . $student->getEmail());
-            $this->command->line("Phone: " . $student->getPhone());
-            $this->command->line("Age: " . $student->getAge());
-            $this->command->line("ID Number: " . $student->getIdNumber());
-            $this->command->line("Class: " . $student->getClass()->getName());
-            $this->command->line("Status: " . ucfirst($student->getStatus()));
+            $student->showProfile($this->command); 
+
+            // Log the action that admin viewed this student's profile
             $this->logAction("Admin viewed profile for student: " . $student->getEmail());
         }
+
         // Edit student info like name, email, class, etc.
         public function editStudent()
             {
@@ -302,7 +284,7 @@
                         $this->command->line("Current class: " . $student->getClass()->getName());
                         $classNames = array_keys($this->classes);
                         $selectedIndex = array_search($student->getClass()->getName(), $classNames);
-                        $newClassName = $this->command->choice("Choose new class", $classNames, $selectedIndex !== false ? $selectedIndex : 0);
+                        $newClassName = $this->command->choice("Choose new class", $classNames,$selectedIndex !== false ? $selectedIndex : 0);
                         $newClass = $this->classes[$newClassName];
                         $student->setClass($newClass);
                         $this->command->info("Class updated successfully.");
@@ -575,70 +557,60 @@
             }
         }
 
-        // List only students with active status
-        public function listActiveStudents()
+        // Called when a method does not exist; allows "listStudents" with a status
+        public function __call($name, $arguments)
         {
-            $this->command->info("Active Students:");
-            // Get only students with status 'active'
-            $activeStudents = collect($this->students)->filter(fn ($s) => $s->getStatus() === 'active');
-
-            // If no active students found, show message and return
-            if ($activeStudents->isEmpty()) {
-                $this->command->line("No active students found.");
-                return;
+            if ($name === 'listStudents') {
+                // Get the status from arguments, or use "all" if not given
+                $status = $arguments[0] ?? 'all'; // 'all' or 'active'
+                
+                // Call the private function to show students
+                $this->listStudentsByStatus($status);
+            } else {
+                // If method does not exist, show an error
+                throw new \BadMethodCallException("Method $name does not exist.");
             }
-            // Display each active student's name and class
-            foreach ($activeStudents as $student) {
-                $this->command->line("- Name: {$student->getName()} | Class: {$student->getClass()->getName()}");
-            }
-            $this->logAction("Admin viewed list of active students.");  // Log this action for tracking
         }
 
-        // List all students regardless of status
-        public function listAllStudents()
+        // This private function shows students depending on their status
+        private function listStudentsByStatus(string $status)
         {
-            $this->command->info("All Students:");
+            $this->command->info(ucfirst($status) . " Students:");         
+            $studentsToShow = collect($this->students); // Get all students
+            if ($status === 'active') {  // If status is 'active', show only active student
+                $studentsToShow = $studentsToShow->filter(fn($s) => $s->getStatus() === 'active');
+            }
 
-            // If no students in list, show message and return
-            if (empty($this->students)) {
+            // If no students found, show a message and stop
+            if ($studentsToShow->isEmpty()) {
                 $this->command->line("No students found.");
                 return;
             }
-            // Loop through all students and show their name, class, and status
-            foreach ($this->students as $student) {
-                $status = strtolower($student->getStatus()) === 'active' ? 'Active' : 'Inactive';
-                $this->command->line("- Name: {$student->getName()} | Class: {$student->getClass()->getName()} | Status: $status");
+            // Show each student with name, class, and status
+            foreach ($studentsToShow as $student) {
+                $statusText = strtolower($student->getStatus()) === 'active' ? 'Active' : 'Inactive';
+                $this->command->line("- Name: {$student->getName()} | Class: {$student->getClass()->getName()} 
+                                                                    | Status: $statusText");
             }
-            $this->logAction("Admin viewed list of all students.");   // Log this action for tracking
+            $this->logAction("Admin viewed list of $status students.");
         }
 
-        public function viewClassesInfo()
-             {
-                while (true) {
-                    $classList = array_keys($this->classes);   // Get all class names as a list
-                    $classList[] = 'Exit';  // Add an option to exit the loop
-                    // Ask the user to select a class or exit
-                    $choice = $this->command->choice("Select a class to view details", $classList);
-                    if ($choice === 'Exit') return;  // Exit loop/function if Exit selected
-                    $class = $this->classes[$choice];   // Get selected class object
-
-                    // Show the class info
-                    $this->command->info("Class: {$class->getName()}");
-                    $this->command->line("Supervisor: " . ($class->getSupervisor() ?? 'Unassigned'));
-                    $subjects = $class->getSubjects();
-                    if (!empty($subjects)) {
-                        $this->command->line("Subjects:");
-                        foreach ($subjects as $subject) {
-                            $this->command->line("- $subject");
-                        }
-                    } else {
-                        $this->command->line("No subjects assigned.");
-                    }
-                    $this->logAction("Admin viewed class info for {$class->getName()}");
-                }
+        //This method displays information about a selected class
+       public function viewClassesInfo()
+        {
+            // Keep asking the user to pick a class until they choose 'Exit'
+            while (true) {
+                $classList = array_keys($this->classes);  
+                $classList[] = 'Exit';  
+                $choice = $this->command->choice("Select a class to view details", $classList);
+                if ($choice === 'Exit') return;  
+                $class = $this->classes[$choice];  
+                // Show information about the selected class
+                $class->showInfo($this->command);
+                $this->logAction("Admin viewed class info for {$class->getName()}");
+            }
         }
 
-        
         // Validate if email is not empty and has correct format
         private function validateEmailInput(string $email): bool
             {

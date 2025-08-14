@@ -58,20 +58,7 @@
             }
             file_put_contents($this->gradesFile, implode("\n", $lines));
         }
-
-        // Show the profile information of the student
-        public function showProfile(Student $student)
-        {
-            $this->command->info("Profile Info");
-            $this->command->line("Name: {$student->getName()}");
-            $this->command->line("ID Number: {$student->getIdNumber()}");
-            $this->command->line("Phone: {$student->getPhone()}");
-            $this->command->line("Age: {$student->getAge()}");
-            $this->command->line("Class: {$student->getClass()->getName()}");
-            $this->command->line("Email: {$student->getEmail()}");
-            $this->logAction("Student viewed their profile: {$student->getEmail()}");   // Save this action in the log file
-        }
-
+        
         // Update the student's contact information (Email, Phone, or Password)
         public function updateContact(Student $student, array $students)
         {
@@ -209,30 +196,6 @@
             }
             $this->logAction("Student viewed subjects and grades for class: {$classObj->getName()}");
         }
-
-        // Show information about the classroom
-        public function showClassroom(Student $student)
-        {
-            $classObj = $student->getClass();
-            if (!$classObj) {
-                $this->command->line("Student is not assigned to a valid class.");
-                return;
-            }
-            $this->command->info("Assigned Classroom Info");
-            $this->command->line("Class: {$classObj->getName()}");
-            $this->command->line("Class Supervisor: {$classObj->getSupervisor()}");
-            $subjects = $classObj->getSubjects();
-
-            if (!empty($subjects)) {
-                $this->command->line("Subjects:");
-                foreach ($subjects as $subject) {
-                    $this->command->line("- $subject");
-                }
-            } else {
-                $this->command->line("No subjects assigned.");
-            }
-            $this->logAction("Student viewed classroom info for class: {$classObj->getName()}");
-          }
 
         // Save the action to a log file with date and time
         private function logAction(string $message)

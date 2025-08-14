@@ -71,4 +71,23 @@ class SchoolClass
         }
         throw new \InvalidArgumentException("Subject '$subject' does not exist.");
     }
+   // Shows all information about the classroom
+    public function showInfo(): void
+    {
+        echo "Assigned Classroom Info\n";                   
+        echo "Class: " . $this->getName() . "\n";        
+        echo "Class Supervisor: " . $this->getSupervisor() . "\n"; 
+
+        $subjects = $this->getSubjects(); // Get the list of subjects
+        if (!empty($subjects)) {   // Check if there are any subjects
+            echo "Subjects:\n";                          
+            foreach ($subjects as $subject) {  // Loop through each subject
+                echo "- $subject\n";                     
+            }
+        } else {
+            echo "No subjects assigned.\n";             
+        }
+    }
+
+
 }
