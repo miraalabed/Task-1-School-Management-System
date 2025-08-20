@@ -1,122 +1,84 @@
 <?php
-    namespace App\Models;
-    class User
+namespace App\Models;
+// This is an abstract class for common user properties and methods
+abstract class User
+{
+    // ---------- Properties ----------
+    protected string $name;
+    protected string $phone;
+    protected string $email;
+    protected string $password;
+    protected string $role; // student or teacher
+
+    // ---------- Constructor ----------
+    public function __construct(string $name, string $phone, string $email, string $password, string $role = 'student')
     {
-        protected string $name;
-        protected string $idNumber;
-        protected string $phone;
-        protected int $age;
-        protected string $email;
-        protected string $password;
-
-        public function __construct(
-            string $name,
-            string $idNumber,
-            string $phone,
-            int $age,
-            string $email,
-            string $password
-        ) {
-            $this->setName($name);
-            $this->setIdNumber($idNumber);
-            $this->setPhone($phone);
-            $this->setAge($age);
-            $this->setEmail($email);
-            $this->setPassword($password);
-        }
-
-        // ---------- Validation ----------
-        protected function validateNotEmpty($field, $value): void
-        {
-            if (empty(trim($value))) {
-                throw new \InvalidArgumentException("$field must not be empty.");
-            }
-        }
-
-        protected function validateEmailFormat($email): void
-        {
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                throw new \InvalidArgumentException("Email must be in format test@gmail.com.");
-            }
-        }
-
-        protected function validateIdNumber($idNumber): void
-        {
-            if (!preg_match('/^\d{9}$/', $idNumber)) {
-                throw new \InvalidArgumentException("ID number must be exactly 9 digits.");
-            }
-        }
-
-        protected function validatePhone($phone): void
-        {
-            if (!preg_match('/^\d{10}$/', $phone)) {
-                throw new \InvalidArgumentException("Phone number must be exactly 10 digits.");
-            }
-        }
-
-        // ---------- Setters ----------
-        public function setName(string $name): void
-        {
-            $this->validateNotEmpty('Name', $name);
-            $this->name = $name;
-        }
-
-        public function setIdNumber(string $idNumber): void
-        {
-            $this->validateNotEmpty('ID Number', $idNumber);
-            $this->validateIdNumber($idNumber);
-            $this->idNumber = $idNumber;
-        }
-
-        public function setPhone(string $phone): void
-        {
-            $this->validateNotEmpty('Phone', $phone);
-            $this->validatePhone($phone);
-            $this->phone = $phone;
-        }
-
-        public function setAge(int $age): void
-        {
-            $this->validateNotEmpty('Age', $age);
-            if ($age < 5 || $age > 100) {
-                throw new \InvalidArgumentException("Age must be realistic.");
-            }
-            $this->age = $age;
-        }
-
-        public function setEmail(string $email): void
-        {
-            $this->validateNotEmpty('Email', $email);
-            $this->validateEmailFormat($email);
-            $this->email = $email;
-        }
-
-        public function setPassword(string $password): void
-        {
-            $this->validateNotEmpty('Password', $password);
-            if (strlen($password) < 4 || strlen($password) > 8) {
-                throw new \InvalidArgumentException("Password must be between 4 and 8 characters.");
-            }
-            $this->password = $password;
-        }
-
-        // ---------- Getters ----------
-        public function getName(): string { return $this->name; }
-        public function getIdNumber(): string { return $this->idNumber; }
-        public function getPhone(): string { return $this->phone; }
-        public function getAge(): int { return $this->age; }
-        public function getEmail(): string { return $this->email; }
-        public function getPassword(): string { return $this->password; }
-        
-        // ---------- Profile Info ----------
-        // show basic user info
-        public function showProfile($command): void
-        {
-            $command->line("Name: " . $this->getName());
-            $command->line("Email: " . $this->getEmail());
-            $command->line("Phone: " . $this->getPhone());
-            $command->line("Age: " . $this->getAge());
-            $command->line("ID Number: " . $this->getIdNumber());
-        }
-
+        // Use setter methods to assign values safely
+        $this->setName($name);
+        $this->setPhone($phone);
+        $this->setEmail($email);
+        $this->setPassword($password);
+        $this->setRole($role);
     }
+
+    // ---------- Getters (to read values) ----------
+    public function getName(): string { return $this->name; }
+    public function getPhone(): string { return $this->phone; }
+    public function getEmail(): string { return $this->email; }
+    public function getPassword(): string { return $this->password; }
+    public function getRole(): string { return $this->role; }
+
+    // ---------- Setters (to update values safely) ----------
+    public function setName(string $name): void
+    {
+        if (empty($name)) throw new \InvalidArgumentException("Name cannot be empty.");
+        $this->name = $name; // Save the name
+    }
+
+    public function setPhone(string $phone): void
+    {
+        if (empty($phone)) throw new \InvalidArgumentException("Phone cannot be empty.");
+        // Phone must be exactly 10 digits
+        if (!preg_match('/^\d{10}$/', $phone)) {
+            throw new \InvalidArgumentException("Phone number must be exactly 10 digits.");
+        }
+        $this->phone = $phone;
+    }
+
+    public function setEmail(string $email): void
+    {
+        if (empty($email)) throw new \InvalidArgumentException("Email cannot be empty.");
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            throw new \InvalidArgumentException("Invalid email format.");
+        }
+        $this->email = $email;
+    }
+
+    public function setPassword(string $password): void
+    {
+        if (empty($password)) throw new \InvalidArgumentException("Password cannot be empty.");
+        // Password length should be between 4 and 8 characters
+        if (strlen($password) < 4 || strlen($password) > 8) {
+            throw new \InvalidArgumentException("Password must be between 4 and 8 characters.");
+        }
+        $this->password = $password;
+    }
+
+    public function setRole(string $role): void
+    {
+        // Only allow student or teacher roles
+        if (!in_array(strtolower($role), ['student', 'teacher'])) {
+            throw new \InvalidArgumentException("Role must be either 'student' or 'teacher'.");
+        }
+        $this->role = strtolower($role);
+    }
+
+    // ---------- Show Profile ----------
+    // This method prints the basic user info in the console
+    public function showProfile($command): void
+    {
+        $command->line("Name: " . $this->name);
+        $command->line("Email: " . $this->email);
+        $command->line("Phone: " . $this->phone);
+    }
+}

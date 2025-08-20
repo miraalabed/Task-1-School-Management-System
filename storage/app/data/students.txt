@@ -1,5 +1,10 @@
-Ali Ahmad,123456789,student,0514789632,15,Grade 11,ali@gmail.com,Pass1234,active
-Sara Hassan,987654321,student,0578963258,14,Grade 10,sara1@gmail.com,Pass123,deactive
-Omar Khalid,456789123,student,0595555555,16,Grade 12,omar@gmail.com,Pass1234,active
-mira,159784623,student,0528974169,15,Grade 10,mira@gmail.com,Pass1234,active
-omar,021478596,student,0514236987,10,Grade 7,om@gmail.com,Pass1234,active
+Ali Ahmad,123456789,student,0559998762,7,Grade 1,ali1@student.com,Pass123,active
+Sara Hassan,987654321,student,0578963258,14,Grade 10,sara1@student.com,Pass123,deactive
+Omar Khalid,456789123,student,0595555555,18,Grade 9,omar1@student.com,Pass1234,active
+mira alabed,159784623,student,0528974169,15,Grade 10,mira@student.com,Pass1234,active
+ahmad Saad,125478451,student,0514236789,11,Grade 5,ahmad@student.com,Pass123,active
+Nour Haj,123321654,student,0591000009,10,Grade 4,nour@student.com,Pass123,active
+Tarek Nabil,785963369,student,0591000010,11,Grade 5,tarek@student.com,Pass123,active
+Diana Mohammad,123658974,student,0599887744,7,Grade 1,diana@student.com,Pass123,deactive
+othman alabed,124587963,student,0569832147,6,Grade 1,othman12@student.com,Pass123,active
+sidra,125478963,student,0512369874,11,Grade 5,sidra@student.com,Pass123,deactive
